@@ -1,82 +1,57 @@
-
 grammar CoDalog;
 
-/*
-PARSER RULES
-*/
+//start               : DATALOGPROGRAM;
 
-DatalogProgram	    : SchemaList  (ClauseList)* ;
+prog		    :  (clause (NEWLINE)*)* EOF ;
 
-SchemaList          : 'SCHEMA :' Schema*;
+clause		    :  goal|fact|e_rule ;// predicate_name ;//rule|fact|goal| LW;//| ConstantList;
 
-Schema              : Predicate '(' VariableList ')';
+e_rule 		    :   predicate WS RULESIGN WS body PERIOD;//(fact | predicate | predicate (COMMA fact | COMMA predicate)* | fact (COMMA predicate| COMMA fact)*) PERIOD;
 
-ClauseList          : RuleList | FactList | GoalList;
+fact                :	 atom constantList RIGHTBRAK PERIOD;
 
-RuleList            : 'RULES :' ( Rule | Rule* ) ;
+goal		    :   GOALSIGN atom termList RIGHTBRAK PERIOD;
 
-FactList            : 'FACTS :' ( Fact | Fact* ) ;
+body		    :  predicate |(predicate COMMA predicate)*;// |(predicate COMMA predicate COMMA predicate)*;
 
-GoalList            : 'GOALS:'  (Goal | Goal* ) ;
+predicate           : 	atom variableList RIGHTBRAK;
 
-Fact                : Predicate '(' ConstantList ')' PERIOD;  //Atomic formula of FOL and each fact of DatalogProgram is ground
+atom      	    :   LW LEFTBRAK ;
 
-Rule                : Head ':-' Body PERIOD ;   //When more than or equal to one literal in the body
+termList	    : constantList | variableList;// | constantList COMMA (constantList COMMA| variableList COMMA | WS)* | variableList COMMA (constantList COMMA | variableList COMMA| WS)* ; //| constantList+ | variableList+ ;
 
-Goal                : '?-' Body PERIOD ;       //When only one literal in the body
+constantList	    :  constant| (constant COMMA WS constant)* ;
 
-Head                : Literal ;
+variableList	    :  (variable (WS)* COMMA (WS)* variable)* | variable  ;
 
-Body                : LiteralList PERIOD  ;
+variable	    :   UW;
 
-LiteralList         : Literal | Literal (',' Literal)*;
+constant	    :   LW | DIGIT;
 
-Literal             : Predicate '(' TermList ')';
+UW	            :	UC | UC (UC)+;
 
-Predicate           : LOWERCASE | Predicate VarChars ;           //Predicate symbol must start with Lowercase character
+LW	            :	LC | LC (LC)+ ;
 
-TermList            : Term | Term (',' Term)*;
+GOALSIGN	    :	'?-';
 
-Term                : Constant | Variable;
+RULESIGN	    :	':-';
 
-BuiltinExp          : Variable Operator Constant;
+RIGHTBRAK	    :	')';
 
-Operator            :  '>' | '<' | '=' | '!='  | '>=' | '<=' ;
+LEFTBRAK	    :	'(';
 
-VariableList        : Variable | Variable (',' Variable)*;
+COMMA		    :   ',';
 
-Variable            : UPPERCASE | Variable VarChars;   //Variable must start with an uppercase letter
+PERIOD             : '.' ;
 
-VarChars            : LOWERCASE | UPPERCASE;
+// SPECIAL    : '+' | '-' | '*' | '/' | '\\' | '^' | '~' | '#'| '$' | '&';
 
-ConstantList        : Constant | Constant (',' Constant)*;
+LC		  : ('a'..'z')|'_' ;
 
-Constant            : LOWERCASE | Numbers | Constant ConstChars;  //Constant must start with Lowercase letter
+UC  		  : ('A'..'Z') ;
 
-ConstChars          : LOWERCASE | UPPERCASE | Numbers;
+DIGIT      	  : ('0'..'9')+ ;
 
-Comment             : '#' Words ~( NEWLINE) |  '#|' Words '|#' ;
+NEWLINE 	  :'\r'? '\n' ;
 
-/*LEXER RULES */
-
-Words               : String | Words ' ' String;
-
-String              : Character | String Character;
-
-Character           : UPPERCASE | LOWERCASE | SPECIAL | Numbers ;
-
-Numbers             : DIGIT | Numbers DIGIT;
-
-PERIOD              : '.';
-
-fragment SPECIAL    : '+' | '-' | '*' | '/' | '\\' | '^' | '~' | ':' | '.' | '?' | '#'| '$' | '&';
-
-fragment LOWERCASE  : [a-z] ;   //rules fragments: they are reusable building blocks for lexer rules.
-
-fragment UPPERCASE  : [A-Z] ;
-
-fragment DIGIT      : [0-9] ;
-
-WHITESPACE          : (' ' | '\t') ;
-
-NEWLINE             : ('\r'? '\n' | '\r')+ ;
+WS		  : (' ' | '\t')+ ;
