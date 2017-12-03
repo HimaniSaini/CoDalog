@@ -12,10 +12,8 @@ class CoDalogListenerEval(CoDalogListener) :
     i=0
     j=0
     k=0
-    EDB=[[]]
-    EDB[0]=[[]]
-    EDB[0][0]=[[]]
-    LOR=[[]]
+    EDB=[]
+    LOR=[]
 
     def enterProg(self, ctx:CoDalogParser.ProgContext):
         pass
@@ -30,17 +28,19 @@ class CoDalogListenerEval(CoDalogListener) :
 
     # Exit a parse tree produced by CoDalogParser#clause.
     def exitClause(self, ctx:CoDalogParser.ClauseContext):
+        #print('While exiting the clause')
+        #print('LOR',self.LOR)
         pass
-
+    
     # Enter a parse tree produced by CoDalogParser#e_rule.
     def enterE_rule(self, ctx:CoDalogParser.E_ruleContext):
+        self.LOR.append([])
+        self.j=0
         self.Head=True
 
     # Exit a parse tree produced by CoDalogParser#e_rule.
     def exitE_rule(self, ctx:CoDalogParser.E_ruleContext):
-        self.LOR.append([])
         self.k += 1
-        self.j = 0
         self.Body=False
         self.Head=False
         for i in range(len(self.Head_Variables)):
@@ -56,12 +56,14 @@ class CoDalogListenerEval(CoDalogListener) :
 
     # Enter a parse tree produced by CoDalogParser#fact.
     def enterFact(self, ctx:CoDalogParser.FactContext):
+        self.EDB.append([])
         self.Fact=True
 
     # Exit a parse tree produced by CoDalogParser#fact.
     def exitFact(self, ctx:CoDalogParser.FactContext):
-        self.Fact=True
-        self.i+=1
+        self.i += 1
+        self.Fact=False
+
 
     # Enter a parse tree produced by CoDalogParser#goal.
     def enterGoal(self, ctx:CoDalogParser.GoalContext):
@@ -71,7 +73,6 @@ class CoDalogListenerEval(CoDalogListener) :
     def exitGoal(self, ctx:CoDalogParser.GoalContext):
         self.Goal=False
 
-
     # Enter a parse tree produced by CoDalogParser#body.
     def enterBody(self, ctx:CoDalogParser.BodyContext):
         self.Body=True
@@ -79,7 +80,6 @@ class CoDalogListenerEval(CoDalogListener) :
     # Exit a parse tree produced by CoDalogParser#body.
     def exitBody(self, ctx:CoDalogParser.BodyContext):
         self.Body=False
-
 
     # Enter a parse tree produced by CoDalogParser#predicate.
     def enterPredicate(self, ctx:CoDalogParser.PredicateContext):
@@ -89,19 +89,12 @@ class CoDalogListenerEval(CoDalogListener) :
     def exitPredicate(self, ctx:CoDalogParser.PredicateContext):
         self.j+=1
 
-
     # Enter a parse tree produced by CoDalogParser#atom.
     def enterAtom(self, ctx:CoDalogParser.AtomContext):
         predicateName = ctx.LW().getText()
-
         if self.Head==False and self.Body==False:
-            #self.EDB[self.i]=[]
-            self.EDB[self.i][0] = predicateName
-            #self.currentAtom =
+            self.EDB[self.i].append(predicateName)
         else:
-            print(self.k,self.j)
-            print(self.LOR)
-            print(self.k,self.j)
             self.LOR[self.k].append([predicateName])
 
     # Exit a parse tree produced by CoDalogParser#atom.
@@ -116,16 +109,16 @@ class CoDalogListenerEval(CoDalogListener) :
     def exitTermList(self, ctx:CoDalogParser.TermListContext):
         pass
 
-
     # Enter a parse tree produced by CoDalogParser#constantList.
     def enterConstantList(self, ctx:CoDalogParser.ConstantListContext):
-        self.EDB[self.i].append(ctx.getText().split(', '))
-
+        for variable in ctx.getText().split(', '):
+            self.EDB[self.i].append(variable)
+        #print(self.EDB)
+        #self.EDB[self.i].append(ctx.getText().split(', '))
 
     # Exit a parse tree produced by CoDalogParser#constantList.
     def exitConstantList(self, ctx:CoDalogParser.ConstantListContext):
         pass
-
 
     # Enter a parse tree produced by CoDalogParser#variableList.
     def enterVariableList(self, ctx:CoDalogParser.VariableListContext):
@@ -138,15 +131,12 @@ class CoDalogListenerEval(CoDalogListener) :
     def exitVariableList(self, ctx:CoDalogParser.VariableListContext):
         pass
 
-
     # Enter a parse tree produced by CoDalogParser#variable.
     def enterVariable(self, ctx:CoDalogParser.VariableContext):
-        print('When reached the variable')
         if (self.Body==True):
             self.Body_Variables.append(ctx.getText())
         if (self.Body==False ):
             self.Head_Variables.append(ctx.getText())
-
 
     # Exit a parse tree produced by CoDalogParser#variable.
     def exitVariable(self, ctx:CoDalogParser.VariableContext):
