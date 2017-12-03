@@ -16,8 +16,6 @@ class CoDalogListenerEval(CoDalogListener) :
     EDB[0]=[[]]
     EDB[0][0]=[[]]
     LOR=[[]]
-    LOR[0]=[[]]
-    LOR[0][0]=[[]]
 
     def enterProg(self, ctx:CoDalogParser.ProgContext):
         pass
@@ -40,7 +38,9 @@ class CoDalogListenerEval(CoDalogListener) :
 
     # Exit a parse tree produced by CoDalogParser#e_rule.
     def exitE_rule(self, ctx:CoDalogParser.E_ruleContext):
-        self.k+=1
+        self.LOR.append([])
+        self.k += 1
+        self.j = 0
         self.Body=False
         self.Head=False
         for i in range(len(self.Head_Variables)):
@@ -95,17 +95,14 @@ class CoDalogListenerEval(CoDalogListener) :
         predicateName = ctx.LW().getText()
 
         if self.Head==False and self.Body==False:
-            if predicateName not in self.EDB:
-                #self.EDB[self.i]=[]
-                self.EDB[self.i][0] = predicateName
-                #self.currentAtom =
+            #self.EDB[self.i]=[]
+            self.EDB[self.i][0] = predicateName
+            #self.currentAtom =
         else:
-            if predicateName not in self.LOR:
-                if not self.LOR[self.k]:
-                    #self.LOR[self.k]=[[]]
-                    print(self.k,self.j)
-                #self.LOR[self.k][self.j]=[[]]
-                self.LOR[self.k][self.j].append(predicateName)
+            print(self.k,self.j)
+            print(self.LOR)
+            print(self.k,self.j)
+            self.LOR[self.k].append([predicateName])
 
     # Exit a parse tree produced by CoDalogParser#atom.
     def exitAtom(self, ctx:CoDalogParser.AtomContext):

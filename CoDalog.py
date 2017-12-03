@@ -10,7 +10,7 @@ facts ={}
 currentAtom = ''
 
 #Parse the tree
-input=InputStream('a(X,Y) :- b(X,Z),c(Z,Y).')
+input=InputStream('a(X,Y) :- b(X,Z),c(Z,Y).\nedge(X,Y) :- path(X,Z),cat(Z,Y).')
 lexer = CoDalogLexer(input)
 stream = CommonTokenStream(lexer)
 parser = CoDalogParser(stream)
