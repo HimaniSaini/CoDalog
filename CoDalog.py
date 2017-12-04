@@ -11,8 +11,8 @@ facts ={}
 currentAtom = ''
 
 #Parse the tree
-#input=InputStream('a(X,Y) :- b(X,Z),b(Z,Y).\nb(1, 2).\nb(0, 2).\nb(0, 1).\nb(2, 3).')
-input=InputStream('a(X,Y) :- b(X,Y).\nb(1, 2).\nb(0, 2).')
+input=InputStream('a(X,Y) :- b(X,Z),b(Z,Y).\nb(0, 0).\nb(0, 1).\nb(1, 2).\nb(2, 3).\nb(0, 2).\nb(0, 3).')
+#input=InputStream('a(X,Y) :- b(X,Y).\nb(1, 2).\nb(0, 2).')
 lexer = CoDalogLexer(input)
 stream = CommonTokenStream(lexer)
 parser = CoDalogParser(stream)
@@ -45,33 +45,64 @@ def infer(Facts,Rule):
         new=produce(R,Facts)
 '''
 
-def produce(Rule,Facts):
-    K=copy.copy(Rule[0])
-    new=[]
-    for j in range(1,len(K)):
-        print('----------------Literal--------------------: ',j)
-        for i in range(len(Facts)):
-            print('--------------Fact-----------',i)
-            print('All Literals',K)
-            print('Fact Compared:',Facts[i])
-            print('Literal Compared:',K[j])
-            mgu=MGU(K[j],Facts[i])
-            print('mgu_returned',mgu)
-            if len(mgu)!=0:
-                print('Lets Substititute all')
-                p=[]
-                for l in range(len(K)):
-                    print('Literal being substituted,k:',K[l])
-                    x=substitute(K[l],mgu)
-                    p.append(x)
-                    print('After Substitution, k:',K[l])
-                    print('p:',p)
-                new.append(p.pop(0))
-            print('new',new)
-            print('K',K)
+def produce(ListOfLiterals,Facts):
+    IDB=[]
+    IDB_List=[]
+    for j in range(len(Facts)):
+        i=1
+        #print('Rule:',Rule)
+        print('ListOfLiterals',ListOfLiterals)
+        Rule=copy.deepcopy(ListOfLiterals)
         print('Rule:',Rule)
-        return new
+        print('Rule:',Rule[0][i])
+        print('for fact',Facts[j],'and Literal',Rule[0][i])
+        IDB=produce_facts(Facts,Facts[j],Rule[0],i,IDB_List)
+    return IDB
 
+
+def produce_facts(Facts,fact,Rule,i,IDB_List):
+    #IDB_List.append([])
+    print('Rule:',Rule)
+    print('Fact:',fact)
+    New_Rule=copy.copy(Rule)
+    mgu=MGU(Rule[i],fact)
+    if len(mgu)!=0:
+        print('Lets Substititute all')
+        print('bbbbbbbbbb', New_Rule, Rule)
+        for l in range(len(Rule)):
+            print('Literal being substituted,rule:',Rule[l])
+            Rule=copy.deepcopy(New_Rule)
+            substitute(Rule[l],mgu)
+            print('After Substitution, rule:',Rule[l])
+        print('The whole rule after substitution:',Rule)
+        Y=1
+        #print('Rule[1]:',Rule[1])
+        for k in range(1,len(Rule[0])):
+            print('Rule[0][k]:',Rule[0][k])
+            if not isinstance(Rule[0][k],int):
+                Y=0
+        print('Y=',Y)
+        if(Y==1):
+            print('aaaaaaaaaaaaaaaaaa',New_Rule, Rule)
+            new_fact=Rule.pop(0)
+            if new_fact not in IDB_List:
+                IDB_List.append(new_fact)
+        else:
+            i+=1
+            print('For the next iteration')
+            for k in range(len(Facts)):
+                New_Rule=copy.copy(Rule)
+                print('For fact',Facts[k])
+                print('EDB parameter:',Facts)
+                print('Fact parameter:',Facts[k])
+                print('Rule parameter:',Rule)
+                print('i parameter:',i)
+                print('IDB list parameter:',IDB_List)
+                produce_facts(Facts,Facts[k],New_Rule,i,IDB_List)
+    else:
+        IDB_List=IDB_List
+    print('IDB_List:',IDB_List)
+    return IDB_List
 
 def MGU(literal,fact):
     mgu=[]
@@ -85,10 +116,11 @@ def MGU(literal,fact):
         print('Fact and literal are probably unifiable')
         for i in range(1,len(literal)):
             if isinstance(literal[i],int):
-                if literal[i]==fact[i]:
+                if literal[i]==int(fact[i]):
                     pass
                 else:
                     print('Not Unifibale after all')
+                    break
             else:
                 theta=[literal[i],fact[i]]
                 print('Thetta',theta)
@@ -99,30 +131,21 @@ def MGU(literal,fact):
 
 def substitute(literal,mgu):
     print('Literal:',literal)
-    new_literal=copy.copy(literal)
+    #new_literal=copy.copy(literal)
     for i in range(len(mgu)):
-        for j in range(1,len(new_literal)):
-            if new_literal[j]==mgu[i][0]:
-                new_literal[j]=int(mgu[i][1])
-                print('Literal while transforming',literal)
-                print('New_Literal while transformings',new_literal)
-    print('Literal',literal)
-    print('New_Literal',new_literal)
-    return new_literal
+        print('Literal while transforming',literal)
+        for j in range(1,len(literal)):
+            if literal[j]==mgu[i][0]:
+                literal[j]=int(mgu[i][1])
+                print('New_Literal transformings',literal)
+    print('Final Literal',literal)
+    #print('New_Literal',new_literal)
+    #return new_literal
 
 print('Lets Evaluate')
 result=produce(Rules,Facts)
 print(result)
 
-#a=['atom','X','Y']
-#b=['atom',1,2]
-
-#substitute(a,b)
-#print('a:',a)
-#print('b:',b)
-#a=['atom','X','Y']
-#c=mgu(a,b)
-#print('c:',c)
 
 
 
