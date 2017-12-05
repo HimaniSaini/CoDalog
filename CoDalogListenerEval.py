@@ -51,7 +51,7 @@ class CoDalogListenerEval(CoDalogListener) :
         if (S==1):
             print('Safe Rule')
 
-            R=0
+            '''R=0
             for i in range(len(self.BP)):
                 R=0
                 if(self.BP[0][i].isupper()):
@@ -62,7 +62,7 @@ class CoDalogListenerEval(CoDalogListener) :
             if(R==1):
                 print('Safe Built In Predicate ')
             else:
-                print('UnSafe Built in Predicate ')
+                print('UnSafe Built in Predicate ')'''
 
         else:
             print('Unsafe Rule')
