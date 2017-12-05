@@ -7,10 +7,18 @@ from CoDalogListenerEval import CoDalogListenerEval
 import sys
 import copy
 import time
+'''
+print('-----Welcome To CoDalog-----\n')
+print('Enter the name of the file you need to Evaluate',)
 
-#Parse the tree
-input=FileStream('clique100.txt')
-#input=InputStream('a(X,Y) :- b(X,Y).\na(X,Y) :- a(X,Z),b(Z,Y).\na(X,Y) :- d(X,Y)\b(1, 2).\nb(0, 2).\nb(0, 1).\nb(2, 3)\nd(2, 7).')
+choice=input('\nChoose the type of Evaluation:\n\nEnter 1 for Naive\n\nEnter 2 for Semi Naive\n\nChoice=')
+
+print('You chose ',choice)
+
+file_name=input('Enter the File Name for evaluation\n')
+print('You entered',file_name)
+'''
+input=FileStream('small_sample.txt')
 lexer = CoDalogLexer(input)
 stream = CommonTokenStream(lexer)
 parser = CoDalogParser(stream)
@@ -22,13 +30,13 @@ a=CoDalogListenerEval()
 walker=ParseTreeWalker()
 walker.walk(a,tree)
 
-#print('a.EDB',a.EDB)
-#print('a.LOR',a.LOR)
+print('a.Rules:\n',a.LOR)
+print('a.Facts:\n',a.EDB)
+print('a.Goals:\n',a.Goals)
+print('a.BP:\n',a.BP)
 
-Rules=copy.copy(a.LOR)
-Facts=copy.copy(a.EDB)
-SRules=copy.copy(a.LOR)
-SFacts=copy.copy(a.EDB)
+Goals=copy.copy(a.Goal)
+
 
 def MGU(literal,fact):
     mgu=[]
@@ -43,15 +51,13 @@ def MGU(literal,fact):
         for i in range(1,len(literal)):
             if isinstance(literal[i],int):
                 if literal[i]==int(fact[i]):
-                    pass
+                    y=i+1
+                    if y==len(literal):
+                        print('For this one we evaluated True')
+                        return True
                 else:
                     print('Not Unifibale after all')
                     break
-            elif isinstance(literal[i],str):
-                if literal[i]==(fact[i]):
-                    pass
-                else:
-                    print('Not Unifibale after all')
             else:
                 theta=[literal[i],fact[i]]
                 print('Thetta',theta)
@@ -65,9 +71,13 @@ def substitute(literal,mgu):
     #new_literal=copy.copy(literal)
     for i in range(len(mgu)):
         print('Literal while transforming',literal)
+        print('mgu for this one', mgu)
         for j in range(1,len(literal)):
             if literal[j]==mgu[i][0]:
-                literal[j]=int(mgu[i][1])
+                if isinstance(mgu[i][1],int):
+                    literal[j]=mgu[i][1]
+                else:
+                    literal[j]=int(mgu[i][1])
                 print('New_Literal transformings',literal)
     print('Final Literal',literal)
     #print('New_Literal',new_literal)
@@ -160,27 +170,12 @@ def Eval(Rules,Facts):
         for j in range(len(result_i)):
             if result_i[j] not in result:
                 result.append(result_i[j])
-    print('----Result produced after one iteration---\n',result)
+    print('int\n',result)
     for j in range(len(result)):
-        Facts.append(result[j])
+        if result[j] not in Facts:
+            Facts.append(result[j])
     return Facts
 
-'''def Eval1(Rules,EDB_p,new_facts):
-    R=[]
-    IDB_p=[]
-    EDB_p=[]
-    print('\n\n------------------An Iteration--------------\n')
-    for i in range(len(Rules)):
-        for j in range (len(Rules[i]):
-            if Rules[i] not in IDB_p:
-                IDB_p.apped(Rule[i][0])
-
-        print('\n\n\n\n------------------Evaluation of Rule--------------\n',Rules[i])
-        result=produce_ns(Rules,EDB,new_facts,i)
-        print('----Result produced after evaluation---\n',result)
-        for j in range(len(result)):
-            R.append(result[j])
-    return R'''
 
 def Eval1(Rules,EDB_P,Facts):
     R=[]
@@ -223,31 +218,6 @@ def Naive(Rules,Facts):
         print('------------------New EDB--------\n',NewFacts)
     return NewFacts
 
-'''def SemiNaive(Rules,Facts):
-    NewFacts=[]
-    J=0
-    EDB_New=copy.deepcopy(Facts)
-    New_Facts=copy.deepcopy(Facts)
-    print('------------------BEFORE EVALUATION--------')
-    while J==0:
-        J=1
-        print('\n\n\n\n-------------------------GOING ON TO THE NEXT ITERATION--------------\n',New_Facts)
-        print('------------------EDB FACTS----------------\n',EDB_New)
-        print('------------------NEW EDB FACTS------------\n',New_Facts)
-        Facts=Eval1(Rules,EDB_New,New_Facts)
-        New_Facts=copy.deepcopy(Facts)
-        print('\n-------------New_EBD--------\n',Facts)
-        for k in range(len(Facts)):
-            if Facts[k] not in EDB_New:
-                EDB_New.append(Facts[k])
-                J=0
-        #print('------------------New NEW FACTS--------\n',New_Facts)
-        #for k in range(len(EDB)):
-        #    if Facts[k] not in EDB:
-        #        EDB.append(Facts[k])
-        print('------------------New EDB--------\n',EDB_New)
-    return EDB_New
-'''
 
 def SemiNaive(Rules,eDB):
     P=[]
@@ -282,42 +252,49 @@ def SemiNaive(Rules,eDB):
             L.append(dp[u])
     return P
 
+def compute(Goals,IDB):
+    for i in range(len(Goals)):
+        print('\n\n----------For Goal:--------\n\n',Goals[i])
+        result=[]
+        for j in range(len(IDB)):
+            mgu=MGU(Goals[i],IDB[j])
+            print('mgu:',mgu)
+            if mgu==True:
+                print('\nTrue')
+                break
+            elif len(mgu)!=0:
+                new_goal=copy.copy(Goals[i])
+                substitute(new_goal,mgu)
+                result.append(new_goal)
+                print('int result:\n',result)
+        print('\n\nFor Goal:\n',Goals[i],'Result is\n',result)
 
-#start_time_naive=time.time()
+#print(type(choice))
+choice='1'
 
-#A=Naive(Rules,Facts)
-
-#time_naive=time.time()-start_time_naive
-
-start_time_semi_naive=time.time()
-
-B=SemiNaive(SRules,SFacts)
-
-time_semi_naive=time.time()-start_time_semi_naive
-
-#print('Naive Evaluation',A)
-print('Semi Naive Evaluation',B)
-
-#print('Time taken by naive ',time_naive)
-print('Time taken by semi naive ',time_semi_naive)
-
-
-def compute(goal,IDB)
-    result=[]
-    for i in range(1,len(goal))
-        mgu=MGU()
-    #if all parameters are constants
-
-    #if one or more of them is a variable
-    for i in range(len(IDB)):
-        new_goal=copy.copy(goal)
-        mgu=MGU(new_goal,IDB[i])
-        if len(mgu!=0):
-            x=substitute(goal,IDB[i])
-            result.append(x)
-
-'''
-
-## SEMI NAIVE Algorithm
-
-## BUILT-IN PREDICATES Algorithm
+if choice=='1':
+    print('Doing the Naive Evaluation of the EDB:\n')
+    Rules=copy.copy(a.LOR)
+    Facts=copy.copy(a.EDB)
+    Goals=copy.copy(a.Goals)
+    start_time_naive=time.time()
+    A=Naive(Rules,Facts)
+    time_naive=time.time()-start_time_naive
+    print('Naive Evaluation\n',A)
+    print('Time taken by naive:',time_naive)
+    print('\n\nEvaluate Goals\n')
+    compute(Goals,A)
+elif choice=='2':
+    print('Doing the Semi Naive Evaluation of the EDB:\n')
+    SRules=copy.copy(a.LOR)
+    SFacts=copy.copy(a.EDB)
+    Goals=copy.copy(a.Goals)
+    start_time_semi_naive=time.time()
+    A=SemiNaive(Rules,Facts)
+    time_semi_naive=time.time()-start_time_semi_naive
+    print('Semi Naive Evaluation\n',A)
+    print('Time taken by Semi naive:',time_semi_naive)
+    print('\n\nEvaluate Goals\n')
+    compute(Goals,B)
+else:
+    print('Wrong Choice')
