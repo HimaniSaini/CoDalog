@@ -8,45 +8,69 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17")
-        buf.write("\u0082\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\u00ab\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\3\2\3\2\7\2\37\n\2\f\2\16\2\"\13\2\7\2$\n\2\f\2")
-        buf.write("\16\2\'\13\2\3\2\3\2\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\3\4")
-        buf.write("\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3")
-        buf.write("\6\3\6\3\7\3\7\3\7\3\7\3\7\7\7G\n\7\f\7\16\7J\13\7\5\7")
-        buf.write("L\n\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\n\3\n\5\nW\n\n\3\13")
-        buf.write("\3\13\3\13\3\13\3\13\3\13\7\13_\n\13\f\13\16\13b\13\13")
-        buf.write("\5\13d\n\13\3\f\3\f\7\fh\n\f\f\f\16\fk\13\f\3\f\3\f\7")
-        buf.write("\fo\n\f\f\f\16\fr\13\f\3\f\3\f\7\fv\n\f\f\f\16\fy\13\f")
-        buf.write("\3\f\5\f|\n\f\3\r\3\r\3\16\3\16\3\16\2\2\17\2\4\6\b\n")
-        buf.write("\f\16\20\22\24\26\30\32\2\3\4\2\4\4\r\r\2\u0081\2%\3\2")
-        buf.write("\2\2\4-\3\2\2\2\6/\3\2\2\2\b\66\3\2\2\2\n;\3\2\2\2\fK")
-        buf.write("\3\2\2\2\16M\3\2\2\2\20Q\3\2\2\2\22V\3\2\2\2\24c\3\2\2")
-        buf.write("\2\26{\3\2\2\2\30}\3\2\2\2\32\177\3\2\2\2\34 \5\4\3\2")
-        buf.write("\35\37\7\16\2\2\36\35\3\2\2\2\37\"\3\2\2\2 \36\3\2\2\2")
-        buf.write(" !\3\2\2\2!$\3\2\2\2\" \3\2\2\2#\34\3\2\2\2$\'\3\2\2\2")
-        buf.write("%#\3\2\2\2%&\3\2\2\2&(\3\2\2\2\'%\3\2\2\2()\7\2\2\3)\3")
-        buf.write("\3\2\2\2*.\5\n\6\2+.\5\b\5\2,.\5\6\4\2-*\3\2\2\2-+\3\2")
-        buf.write("\2\2-,\3\2\2\2.\5\3\2\2\2/\60\5\16\b\2\60\61\7\17\2\2")
-        buf.write("\61\62\7\6\2\2\62\63\7\17\2\2\63\64\5\f\7\2\64\65\7\n")
-        buf.write("\2\2\65\7\3\2\2\2\66\67\5\20\t\2\678\5\24\13\289\7\7\2")
-        buf.write("\29:\7\n\2\2:\t\3\2\2\2;<\7\5\2\2<=\5\20\t\2=>\5\22\n")
-        buf.write("\2>?\7\7\2\2?@\7\n\2\2@\13\3\2\2\2AL\5\16\b\2BC\5\16\b")
-        buf.write("\2CD\7\t\2\2DE\5\16\b\2EG\3\2\2\2FB\3\2\2\2GJ\3\2\2\2")
-        buf.write("HF\3\2\2\2HI\3\2\2\2IL\3\2\2\2JH\3\2\2\2KA\3\2\2\2KH\3")
-        buf.write("\2\2\2L\r\3\2\2\2MN\5\20\t\2NO\5\26\f\2OP\7\7\2\2P\17")
-        buf.write("\3\2\2\2QR\7\4\2\2RS\7\b\2\2S\21\3\2\2\2TW\5\24\13\2U")
-        buf.write("W\5\26\f\2VT\3\2\2\2VU\3\2\2\2W\23\3\2\2\2Xd\5\32\16\2")
-        buf.write("YZ\5\32\16\2Z[\7\t\2\2[\\\7\17\2\2\\]\5\32\16\2]_\3\2")
-        buf.write("\2\2^Y\3\2\2\2_b\3\2\2\2`^\3\2\2\2`a\3\2\2\2ad\3\2\2\2")
-        buf.write("b`\3\2\2\2cX\3\2\2\2c`\3\2\2\2d\25\3\2\2\2ei\5\30\r\2")
-        buf.write("fh\7\17\2\2gf\3\2\2\2hk\3\2\2\2ig\3\2\2\2ij\3\2\2\2jl")
-        buf.write("\3\2\2\2ki\3\2\2\2lp\7\t\2\2mo\7\17\2\2nm\3\2\2\2or\3")
-        buf.write("\2\2\2pn\3\2\2\2pq\3\2\2\2qs\3\2\2\2rp\3\2\2\2st\5\30")
-        buf.write("\r\2tv\3\2\2\2ue\3\2\2\2vy\3\2\2\2wu\3\2\2\2wx\3\2\2\2")
-        buf.write("x|\3\2\2\2yw\3\2\2\2z|\5\30\r\2{w\3\2\2\2{z\3\2\2\2|\27")
-        buf.write("\3\2\2\2}~\7\3\2\2~\31\3\2\2\2\177\u0080\t\2\2\2\u0080")
-        buf.write("\33\3\2\2\2\16 %-HKV`cipw{")
+        buf.write("\16\2\'\13\2\3\2\3\2\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\7\4")
+        buf.write("\62\n\4\f\4\16\4\65\13\4\3\4\3\4\7\49\n\4\f\4\16\4<\13")
+        buf.write("\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6")
+        buf.write("\3\6\3\7\3\7\3\7\7\7O\n\7\f\7\16\7R\13\7\3\7\3\7\7\7V")
+        buf.write("\n\7\f\7\16\7Y\13\7\3\7\3\7\7\7]\n\7\f\7\16\7`\13\7\5")
+        buf.write("\7b\n\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\n\3\n\5\nm\n\n\3")
+        buf.write("\13\3\13\3\13\7\13r\n\13\f\13\16\13u\13\13\3\13\3\13\7")
+        buf.write("\13y\n\13\f\13\16\13|\13\13\3\13\7\13\177\n\13\f\13\16")
+        buf.write("\13\u0082\13\13\7\13\u0084\n\13\f\13\16\13\u0087\13\13")
+        buf.write("\5\13\u0089\n\13\3\f\3\f\7\f\u008d\n\f\f\f\16\f\u0090")
+        buf.write("\13\f\3\f\3\f\7\f\u0094\n\f\f\f\16\f\u0097\13\f\3\f\7")
+        buf.write("\f\u009a\n\f\f\f\16\f\u009d\13\f\7\f\u009f\n\f\f\f\16")
+        buf.write("\f\u00a2\13\f\3\f\5\f\u00a5\n\f\3\r\3\r\3\16\3\16\3\16")
+        buf.write("\2\2\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\3\4\2\4\4\r")
+        buf.write("\r\2\u00b2\2%\3\2\2\2\4-\3\2\2\2\6/\3\2\2\2\b@\3\2\2\2")
+        buf.write("\nE\3\2\2\2\fa\3\2\2\2\16c\3\2\2\2\20g\3\2\2\2\22l\3\2")
+        buf.write("\2\2\24\u0088\3\2\2\2\26\u00a4\3\2\2\2\30\u00a6\3\2\2")
+        buf.write("\2\32\u00a8\3\2\2\2\34 \5\4\3\2\35\37\7\16\2\2\36\35\3")
+        buf.write("\2\2\2\37\"\3\2\2\2 \36\3\2\2\2 !\3\2\2\2!$\3\2\2\2\"")
+        buf.write(" \3\2\2\2#\34\3\2\2\2$\'\3\2\2\2%#\3\2\2\2%&\3\2\2\2&")
+        buf.write("(\3\2\2\2\'%\3\2\2\2()\7\2\2\3)\3\3\2\2\2*.\5\n\6\2+.")
+        buf.write("\5\b\5\2,.\5\6\4\2-*\3\2\2\2-+\3\2\2\2-,\3\2\2\2.\5\3")
+        buf.write("\2\2\2/\63\5\16\b\2\60\62\7\17\2\2\61\60\3\2\2\2\62\65")
+        buf.write("\3\2\2\2\63\61\3\2\2\2\63\64\3\2\2\2\64\66\3\2\2\2\65")
+        buf.write("\63\3\2\2\2\66:\7\6\2\2\679\7\17\2\28\67\3\2\2\29<\3\2")
+        buf.write("\2\2:8\3\2\2\2:;\3\2\2\2;=\3\2\2\2<:\3\2\2\2=>\5\f\7\2")
+        buf.write(">?\7\n\2\2?\7\3\2\2\2@A\5\20\t\2AB\5\24\13\2BC\7\7\2\2")
+        buf.write("CD\7\n\2\2D\t\3\2\2\2EF\7\5\2\2FG\5\20\t\2GH\5\22\n\2")
+        buf.write("HI\7\7\2\2IJ\7\n\2\2J\13\3\2\2\2Kb\5\16\b\2LP\5\16\b\2")
+        buf.write("MO\7\17\2\2NM\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QS")
+        buf.write("\3\2\2\2RP\3\2\2\2SW\7\t\2\2TV\7\17\2\2UT\3\2\2\2VY\3")
+        buf.write("\2\2\2WU\3\2\2\2WX\3\2\2\2XZ\3\2\2\2YW\3\2\2\2Z[\5\16")
+        buf.write("\b\2[]\3\2\2\2\\L\3\2\2\2]`\3\2\2\2^\\\3\2\2\2^_\3\2\2")
+        buf.write("\2_b\3\2\2\2`^\3\2\2\2aK\3\2\2\2a^\3\2\2\2b\r\3\2\2\2")
+        buf.write("cd\5\20\t\2de\5\26\f\2ef\7\7\2\2f\17\3\2\2\2gh\7\4\2\2")
+        buf.write("hi\7\b\2\2i\21\3\2\2\2jm\5\24\13\2km\5\26\f\2lj\3\2\2")
+        buf.write("\2lk\3\2\2\2m\23\3\2\2\2n\u0089\5\32\16\2os\5\32\16\2")
+        buf.write("pr\7\17\2\2qp\3\2\2\2ru\3\2\2\2sq\3\2\2\2st\3\2\2\2t\u0080")
+        buf.write("\3\2\2\2us\3\2\2\2vz\7\t\2\2wy\7\17\2\2xw\3\2\2\2y|\3")
+        buf.write("\2\2\2zx\3\2\2\2z{\3\2\2\2{}\3\2\2\2|z\3\2\2\2}\177\5")
+        buf.write("\32\16\2~v\3\2\2\2\177\u0082\3\2\2\2\u0080~\3\2\2\2\u0080")
+        buf.write("\u0081\3\2\2\2\u0081\u0084\3\2\2\2\u0082\u0080\3\2\2\2")
+        buf.write("\u0083o\3\2\2\2\u0084\u0087\3\2\2\2\u0085\u0083\3\2\2")
+        buf.write("\2\u0085\u0086\3\2\2\2\u0086\u0089\3\2\2\2\u0087\u0085")
+        buf.write("\3\2\2\2\u0088n\3\2\2\2\u0088\u0085\3\2\2\2\u0089\25\3")
+        buf.write("\2\2\2\u008a\u008e\5\30\r\2\u008b\u008d\7\17\2\2\u008c")
+        buf.write("\u008b\3\2\2\2\u008d\u0090\3\2\2\2\u008e\u008c\3\2\2\2")
+        buf.write("\u008e\u008f\3\2\2\2\u008f\u009b\3\2\2\2\u0090\u008e\3")
+        buf.write("\2\2\2\u0091\u0095\7\t\2\2\u0092\u0094\7\17\2\2\u0093")
+        buf.write("\u0092\3\2\2\2\u0094\u0097\3\2\2\2\u0095\u0093\3\2\2\2")
+        buf.write("\u0095\u0096\3\2\2\2\u0096\u0098\3\2\2\2\u0097\u0095\3")
+        buf.write("\2\2\2\u0098\u009a\5\30\r\2\u0099\u0091\3\2\2\2\u009a")
+        buf.write("\u009d\3\2\2\2\u009b\u0099\3\2\2\2\u009b\u009c\3\2\2\2")
+        buf.write("\u009c\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009e\u008a\3")
+        buf.write("\2\2\2\u009f\u00a2\3\2\2\2\u00a0\u009e\3\2\2\2\u00a0\u00a1")
+        buf.write("\3\2\2\2\u00a1\u00a5\3\2\2\2\u00a2\u00a0\3\2\2\2\u00a3")
+        buf.write("\u00a5\5\30\r\2\u00a4\u00a0\3\2\2\2\u00a4\u00a3\3\2\2")
+        buf.write("\2\u00a5\27\3\2\2\2\u00a6\u00a7\7\3\2\2\u00a7\31\3\2\2")
+        buf.write("\2\u00a8\u00a9\t\2\2\2\u00a9\33\3\2\2\2\26 %-\63:PW^a")
+        buf.write("lsz\u0080\u0085\u0088\u008e\u0095\u009b\u00a0\u00a4")
         return buf.getvalue()
 
 
@@ -258,12 +282,6 @@ class CoDalogParser ( Parser ):
             return self.getTypedRuleContext(CoDalogParser.PredicateContext,0)
 
 
-        def WS(self, i:int=None):
-            if i is None:
-                return self.getTokens(CoDalogParser.WS)
-            else:
-                return self.getToken(CoDalogParser.WS, i)
-
         def RULESIGN(self):
             return self.getToken(CoDalogParser.RULESIGN, 0)
 
@@ -273,6 +291,12 @@ class CoDalogParser ( Parser ):
 
         def PERIOD(self):
             return self.getToken(CoDalogParser.PERIOD, 0)
+
+        def WS(self, i:int=None):
+            if i is None:
+                return self.getTokens(CoDalogParser.WS)
+            else:
+                return self.getToken(CoDalogParser.WS, i)
 
         def getRuleIndex(self):
             return CoDalogParser.RULE_e_rule
@@ -292,19 +316,36 @@ class CoDalogParser ( Parser ):
 
         localctx = CoDalogParser.E_ruleContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_e_rule)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 45
             self.predicate()
-            self.state = 46
-            self.match(CoDalogParser.WS)
-            self.state = 47
-            self.match(CoDalogParser.RULESIGN)
-            self.state = 48
-            self.match(CoDalogParser.WS)
             self.state = 49
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==CoDalogParser.WS:
+                self.state = 46
+                self.match(CoDalogParser.WS)
+                self.state = 51
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 52
+            self.match(CoDalogParser.RULESIGN)
+            self.state = 56
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==CoDalogParser.WS:
+                self.state = 53
+                self.match(CoDalogParser.WS)
+                self.state = 58
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 59
             self.body()
-            self.state = 50
+            self.state = 60
             self.match(CoDalogParser.PERIOD)
         except RecognitionException as re:
             localctx.exception = re
@@ -354,13 +395,13 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_fact)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 52
+            self.state = 62
             self.atom()
-            self.state = 53
+            self.state = 63
             self.constantList()
-            self.state = 54
+            self.state = 64
             self.match(CoDalogParser.RIGHTBRAK)
-            self.state = 55
+            self.state = 65
             self.match(CoDalogParser.PERIOD)
         except RecognitionException as re:
             localctx.exception = re
@@ -413,15 +454,15 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_goal)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 57
+            self.state = 67
             self.match(CoDalogParser.GOALSIGN)
-            self.state = 58
+            self.state = 68
             self.atom()
-            self.state = 59
+            self.state = 69
             self.termList()
-            self.state = 60
+            self.state = 70
             self.match(CoDalogParser.RIGHTBRAK)
-            self.state = 61
+            self.state = 71
             self.match(CoDalogParser.PERIOD)
         except RecognitionException as re:
             localctx.exception = re
@@ -450,6 +491,12 @@ class CoDalogParser ( Parser ):
             else:
                 return self.getToken(CoDalogParser.COMMA, i)
 
+        def WS(self, i:int=None):
+            if i is None:
+                return self.getTokens(CoDalogParser.WS)
+            else:
+                return self.getToken(CoDalogParser.WS, i)
+
         def getRuleIndex(self):
             return CoDalogParser.RULE_body
 
@@ -470,28 +517,48 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_body)
         self._la = 0 # Token type
         try:
-            self.state = 73
+            self.state = 95
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 63
+                self.state = 73
                 self.predicate()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 70
+                self.state = 92
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==CoDalogParser.LW:
-                    self.state = 64
+                    self.state = 74
                     self.predicate()
-                    self.state = 65
+                    self.state = 78
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    while _la==CoDalogParser.WS:
+                        self.state = 75
+                        self.match(CoDalogParser.WS)
+                        self.state = 80
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+
+                    self.state = 81
                     self.match(CoDalogParser.COMMA)
-                    self.state = 66
+                    self.state = 85
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    while _la==CoDalogParser.WS:
+                        self.state = 82
+                        self.match(CoDalogParser.WS)
+                        self.state = 87
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+
+                    self.state = 88
                     self.predicate()
-                    self.state = 72
+                    self.state = 94
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
@@ -543,11 +610,11 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_predicate)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 75
+            self.state = 97
             self.atom()
-            self.state = 76
+            self.state = 98
             self.variableList()
-            self.state = 77
+            self.state = 99
             self.match(CoDalogParser.RIGHTBRAK)
         except RecognitionException as re:
             localctx.exception = re
@@ -589,9 +656,9 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_atom)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 79
+            self.state = 101
             self.match(CoDalogParser.LW)
-            self.state = 80
+            self.state = 102
             self.match(CoDalogParser.LEFTBRAK)
         except RecognitionException as re:
             localctx.exception = re
@@ -634,18 +701,18 @@ class CoDalogParser ( Parser ):
         localctx = CoDalogParser.TermListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_termList)
         try:
-            self.state = 84
+            self.state = 106
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 82
+                self.state = 104
                 self.constantList()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 83
+                self.state = 105
                 self.variableList()
                 pass
 
@@ -671,17 +738,17 @@ class CoDalogParser ( Parser ):
                 return self.getTypedRuleContext(CoDalogParser.ConstantContext,i)
 
 
-        def COMMA(self, i:int=None):
-            if i is None:
-                return self.getTokens(CoDalogParser.COMMA)
-            else:
-                return self.getToken(CoDalogParser.COMMA, i)
-
         def WS(self, i:int=None):
             if i is None:
                 return self.getTokens(CoDalogParser.WS)
             else:
                 return self.getToken(CoDalogParser.WS, i)
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(CoDalogParser.COMMA)
+            else:
+                return self.getToken(CoDalogParser.COMMA, i)
 
         def getRuleIndex(self):
             return CoDalogParser.RULE_constantList
@@ -703,30 +770,56 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_constantList)
         self._la = 0 # Token type
         try:
-            self.state = 97
+            self.state = 134
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 86
+                self.state = 108
                 self.constant()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 94
+                self.state = 131
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==CoDalogParser.LW or _la==CoDalogParser.DIGIT:
-                    self.state = 87
+                    self.state = 109
                     self.constant()
-                    self.state = 88
-                    self.match(CoDalogParser.COMMA)
-                    self.state = 89
-                    self.match(CoDalogParser.WS)
-                    self.state = 90
-                    self.constant()
-                    self.state = 96
+                    self.state = 113
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    while _la==CoDalogParser.WS:
+                        self.state = 110
+                        self.match(CoDalogParser.WS)
+                        self.state = 115
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+
+                    self.state = 126
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    while _la==CoDalogParser.COMMA:
+                        self.state = 116
+                        self.match(CoDalogParser.COMMA)
+                        self.state = 120
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+                        while _la==CoDalogParser.WS:
+                            self.state = 117
+                            self.match(CoDalogParser.WS)
+                            self.state = 122
+                            self._errHandler.sync(self)
+                            _la = self._input.LA(1)
+
+                        self.state = 123
+                        self.constant()
+                        self.state = 128
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+
+                    self.state = 133
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
@@ -754,17 +847,17 @@ class CoDalogParser ( Parser ):
                 return self.getTypedRuleContext(CoDalogParser.VariableContext,i)
 
 
-        def COMMA(self, i:int=None):
-            if i is None:
-                return self.getTokens(CoDalogParser.COMMA)
-            else:
-                return self.getToken(CoDalogParser.COMMA, i)
-
         def WS(self, i:int=None):
             if i is None:
                 return self.getTokens(CoDalogParser.WS)
             else:
                 return self.getToken(CoDalogParser.WS, i)
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(CoDalogParser.COMMA)
+            else:
+                return self.getToken(CoDalogParser.COMMA, i)
 
         def getRuleIndex(self):
             return CoDalogParser.RULE_variableList
@@ -786,42 +879,50 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_variableList)
         self._la = 0 # Token type
         try:
-            self.state = 121
+            self.state = 162
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,19,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 117
+                self.state = 158
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==CoDalogParser.UW:
-                    self.state = 99
+                    self.state = 136
                     self.variable()
-                    self.state = 103
+                    self.state = 140
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     while _la==CoDalogParser.WS:
-                        self.state = 100
+                        self.state = 137
                         self.match(CoDalogParser.WS)
-                        self.state = 105
+                        self.state = 142
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
 
-                    self.state = 106
-                    self.match(CoDalogParser.COMMA)
-                    self.state = 110
+                    self.state = 153
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    while _la==CoDalogParser.WS:
-                        self.state = 107
-                        self.match(CoDalogParser.WS)
-                        self.state = 112
+                    while _la==CoDalogParser.COMMA:
+                        self.state = 143
+                        self.match(CoDalogParser.COMMA)
+                        self.state = 147
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+                        while _la==CoDalogParser.WS:
+                            self.state = 144
+                            self.match(CoDalogParser.WS)
+                            self.state = 149
+                            self._errHandler.sync(self)
+                            _la = self._input.LA(1)
+
+                        self.state = 150
+                        self.variable()
+                        self.state = 155
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
 
-                    self.state = 113
-                    self.variable()
-                    self.state = 119
+                    self.state = 160
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
@@ -829,7 +930,7 @@ class CoDalogParser ( Parser ):
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 120
+                self.state = 161
                 self.variable()
                 pass
 
@@ -871,7 +972,7 @@ class CoDalogParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_variable)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 123
+            self.state = 164
             self.match(CoDalogParser.UW)
         except RecognitionException as re:
             localctx.exception = re
@@ -914,7 +1015,7 @@ class CoDalogParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 125
+            self.state = 166
             _la = self._input.LA(1)
             if not(_la==CoDalogParser.LW or _la==CoDalogParser.DIGIT):
                 self._errHandler.recoverInline(self)
