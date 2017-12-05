@@ -87,6 +87,16 @@ public interface CoDalogListener extends ParseTreeListener {
 	 */
 	void exitAtom(CoDalogParser.AtomContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CoDalogParser#bp}.
+	 * @param ctx the parse tree
+	 */
+	void enterBp(CoDalogParser.BpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CoDalogParser#bp}.
+	 * @param ctx the parse tree
+	 */
+	void exitBp(CoDalogParser.BpContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CoDalogParser#termList}.
 	 * @param ctx the parse tree
 	 */
@@ -117,6 +127,16 @@ public interface CoDalogListener extends ParseTreeListener {
 	 */
 	void exitVariableList(CoDalogParser.VariableListContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CoDalogParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterTerm(CoDalogParser.TermContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CoDalogParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitTerm(CoDalogParser.TermContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CoDalogParser#variable}.
 	 * @param ctx the parse tree
 	 */
@@ -136,4 +156,14 @@ public interface CoDalogListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConstant(CoDalogParser.ConstantContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CoDalogParser#op}.
+	 * @param ctx the parse tree
+	 */
+	void enterOp(CoDalogParser.OpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CoDalogParser#op}.
+	 * @param ctx the parse tree
+	 */
+	void exitOp(CoDalogParser.OpContext ctx);
 }

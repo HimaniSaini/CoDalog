@@ -111,6 +111,18 @@ public class CoDalogBaseListener implements CoDalogListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBp(CoDalogParser.BpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBp(CoDalogParser.BpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterTermList(CoDalogParser.TermListContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -147,6 +159,18 @@ public class CoDalogBaseListener implements CoDalogListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTerm(CoDalogParser.TermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTerm(CoDalogParser.TermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterVariable(CoDalogParser.VariableContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -166,6 +190,18 @@ public class CoDalogBaseListener implements CoDalogListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConstant(CoDalogParser.ConstantContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOp(CoDalogParser.OpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOp(CoDalogParser.OpContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

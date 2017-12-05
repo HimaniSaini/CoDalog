@@ -80,6 +80,15 @@ class CoDalogListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by CoDalogParser#bp.
+    def enterBp(self, ctx:CoDalogParser.BpContext):
+        pass
+
+    # Exit a parse tree produced by CoDalogParser#bp.
+    def exitBp(self, ctx:CoDalogParser.BpContext):
+        pass
+
+
     # Enter a parse tree produced by CoDalogParser#termList.
     def enterTermList(self, ctx:CoDalogParser.TermListContext):
         pass
@@ -107,6 +116,15 @@ class CoDalogListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by CoDalogParser#term.
+    def enterTerm(self, ctx:CoDalogParser.TermContext):
+        pass
+
+    # Exit a parse tree produced by CoDalogParser#term.
+    def exitTerm(self, ctx:CoDalogParser.TermContext):
+        pass
+
+
     # Enter a parse tree produced by CoDalogParser#variable.
     def enterVariable(self, ctx:CoDalogParser.VariableContext):
         pass
@@ -122,6 +140,15 @@ class CoDalogListener(ParseTreeListener):
 
     # Exit a parse tree produced by CoDalogParser#constant.
     def exitConstant(self, ctx:CoDalogParser.ConstantContext):
+        pass
+
+
+    # Enter a parse tree produced by CoDalogParser#op.
+    def enterOp(self, ctx:CoDalogParser.OpContext):
+        pass
+
+    # Exit a parse tree produced by CoDalogParser#op.
+    def exitOp(self, ctx:CoDalogParser.OpContext):
         pass
 
 

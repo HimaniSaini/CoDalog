@@ -37,7 +37,7 @@ print('a.BP:\n',a.BP)
 
 Goals=copy.copy(a.Goal)
 
-
+'''
 def MGU(literal,fact):
     mgu=[]
     theta=[]
@@ -298,3 +298,4 @@ elif choice=='2':
     compute(Goals,B)
 else:
     print('Wrong Choice')
+'''
