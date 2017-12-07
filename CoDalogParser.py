@@ -135,9 +135,9 @@ class CoDalogParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'='", "'!='", "'<'", "'>'", "'>='", "'<='", 
-                     "<INVALID>", "<INVALID>", "'?-'", "':-'", "')'", "'('", 
-                     "','", "'.'" ]
+    literalNames = [ "<INVALID>", "'=='", "'!='", "'<'", "'>'", "'>='", 
+                     "'<='", "<INVALID>", "<INVALID>", "'?-'", "':-'", "')'", 
+                     "'('", "','", "'.'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "UW", "LW", 

@@ -31,7 +31,7 @@ public class CoDalogParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'='", "'!='", "'<'", "'>'", "'>='", "'<='", null, null, "'?-'", 
+		null, "'=='", "'!='", "'<'", "'>'", "'>='", "'<='", null, null, "'?-'", 
 		"':-'", "')'", "'('", "','", "'.'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {

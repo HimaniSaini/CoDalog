@@ -87,7 +87,6 @@ class CoDalogListenerEval(CoDalogListener) :
     def exitBp(self, ctx:CoDalogParser.BpContext):
         self.K+=1
         self.BuilP=False
-        print('')
 
 
 
@@ -128,7 +127,7 @@ class CoDalogListenerEval(CoDalogListener) :
         if (self.Head==False and self.Body==False and self.Goal==False):
             self.EDB[self.i].append(predicateName)
         if ((self.Head==True or self.Body==True) and self.Goal==False):
-            print('ctx.LW().getText()',ctx.LW().getText())
+            #print('ctx.LW().getText()',ctx.LW().getText())
             self.LOR[self.k].append([predicateName])
 
     # Exit a parse tree produced by CoDalogParser#atom.
@@ -160,10 +159,10 @@ class CoDalogListenerEval(CoDalogListener) :
 
     # Enter a parse tree produced by CoDalogParser#variableList.
     def enterVariableList(self, ctx:CoDalogParser.VariableListContext):
-        print('------------variable list------------')
+        #print('------------variable list------------')
         for variable in ctx.getText().split(','):
             self.LOR[self.k][self.j].append(variable)
-        print(self.LOR)
+        #print(self.LOR)
 
     # Exit a parse tree produced by CoDalogParser#variableList.
     def exitVariableList(self, ctx:CoDalogParser.VariableListContext):
@@ -200,7 +199,7 @@ class CoDalogListenerEval(CoDalogListener) :
             self.Goals[self.g].append(ctx.getText())
         if (self.BuilP==True and self.Fact==False):
             #if(ctx.getText().islower):
-            self.BP[self.K].append(ctx.getText())
+            self.BP[self.K].append(int(ctx.getText()))
             #else:
             #    self.BP[self.K].append(int(ctx.getText()))
         #pass
