@@ -1,0 +1,4 @@
+Parsing the input file and checking for syntax and semantic errors
+The rule a(X,Z) :- b(X,Y). is not safe
+The Built-in Predicate  is not safe because the said operation cannot be applied on strings.
+One of the rules is not safe because the Builtin predicate is not safe

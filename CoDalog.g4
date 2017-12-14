@@ -20,7 +20,7 @@ bp           :    variable (WS)* op (WS)* term;
 
 termList	    :  term| (term (WS)*  (COMMA (WS)* term)*)* ;
 
-constantList	    :  constant| (constant (WS)*  (COMMA (WS)* constant)*)* ;
+constantList	    :  constant| (constant  (COMMA (WS) constant)*)* ;
 
 variableList	    :  (variable (WS)* (COMMA (WS)* variable)*)* | variable  ;
 

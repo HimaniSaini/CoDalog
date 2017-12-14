@@ -2,38 +2,45 @@ from antlr4 import *
 from CoDalogLexer import CoDalogLexer
 from CoDalogListener import CoDalogListener
 from CoDalogParser import CoDalogParser
-from antlr4.tree.Trees import Trees
 from CoDalogListenerEval import CoDalogListenerEval
+from CoDalogErrorListener import CoDalogErrorListener
 import sys
 import copy
 import time
 
 #sys.stdout = open('file', 'w')
-
 '''
 print('-----Welcome To CoDalog-----\n')
 print('Enter the name of the file you need to Evaluate',)
 
 choice=input('\nChoose the type of Evaluation:\n\nEnter 1 for Naive\n\nEnter 2 for Semi Naive\n\nChoice=')
 
-print('You chose ',choice)
-
 file_name=input('Enter the File Name for evaluation\n')
 print('You entered',file_name)
-'''
 
-input=FileStream('graph10.txt')
-#input=InputStream('a(X,Y) :- b(X,Y).X>1\na(X,Y) :- a(X,Z),b(Z,Y).\nb(1, 2).\nb(2, 0).\nb(2, 2).\nb(2, 3).\n?-a(X,Y).\n?-a(1,2).\n?-a(1,X).')
+'''
+output=open("error.txt","w")
+input=FileStream('test.txt')
+#input=InputStream('')
 lexer = CoDalogLexer(input)
 stream = CommonTokenStream(lexer)
 parser = CoDalogParser(stream)
+parser._listeners = [ CoDalogErrorListener(output) ]
 tree = parser.prog()
 print(tree.toStringTree(tree,parser))
 
+
+
+#parser.removeErrorListeners()
+#errorListener = CoDalogErrorListener(output)
+#parser.addErrorListener(errorListener)
+
 #Walk the tree
-a=CoDalogListenerEval()
+a=CoDalogListenerEval(output)
 walker=ParseTreeWalker()
 walker.walk(a,tree)
+
+output.close()
 
 print('a.Rules:\n',a.LOR)
 print('a.Facts:\n',a.EDB)
@@ -47,7 +54,7 @@ print('a.BP:\n',type(a.BP))
 
 Goals=copy.copy(a.Goal)
 Builtin=a.BP
-
+'''
 def MGU(literal,fact):
     mgu=[]
     theta=[]
@@ -497,6 +504,11 @@ def compute(Goals,IDB):
             print('\n\nFor Goal:\n',Goals[i],'Result is\n',goal_result)
 
 
+if choice==1:
+    print('\n\nYou chose Naive Evaluation')
+elif choice==2:
+    print('\n\nYou chose Semi Naive Evalautaion')
+print('\n\nYou chose ',choice)
 #print(type(choice))
 '''
 print('Doing the Naive Evaluation of the EDB:\n')
@@ -535,3 +547,4 @@ print('Time taken by Semi naive:',time_semi_naive)
 print('\n\nEvaluate Goals\n')
 compute(Goals,B)
 print('Wrong Choice')
+'''

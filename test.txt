@@ -1,0 +1,7 @@
+a(X,Z) :- b(X,Y).
+a(X,Y) :- a(X,Z),b(Z,Y),X>Y.
+b(anna, bella).
+b(you, suck)
+b(i,rock).
+b(whatthe, fuck).
+?-a(X,Y.

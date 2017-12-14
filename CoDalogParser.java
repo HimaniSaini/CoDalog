@@ -937,13 +937,13 @@ public class CoDalogParser extends Parser {
 		public ConstantContext constant(int i) {
 			return getRuleContext(ConstantContext.class,i);
 		}
-		public List<TerminalNode> WS() { return getTokens(CoDalogParser.WS); }
-		public TerminalNode WS(int i) {
-			return getToken(CoDalogParser.WS, i);
-		}
 		public List<TerminalNode> COMMA() { return getTokens(CoDalogParser.COMMA); }
 		public TerminalNode COMMA(int i) {
 			return getToken(CoDalogParser.COMMA, i);
+		}
+		public List<TerminalNode> WS() { return getTokens(CoDalogParser.WS); }
+		public TerminalNode WS(int i) {
+			return getToken(CoDalogParser.WS, i);
 		}
 		public ConstantListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -964,9 +964,9 @@ public class CoDalogParser extends Parser {
 		enterRule(_localctx, 20, RULE_constantList);
 		int _la;
 		try {
-			setState(221);
+			setState(210);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,25,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
@@ -977,7 +977,7 @@ public class CoDalogParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(218);
+				setState(207);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==LW || _la==DIGIT) {
@@ -985,53 +985,29 @@ public class CoDalogParser extends Parser {
 					{
 					setState(196);
 					constant();
-					setState(200);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-					while (_la==WS) {
-						{
-						{
-						setState(197);
-						match(WS);
-						}
-						}
-						setState(202);
-						_errHandler.sync(this);
-						_la = _input.LA(1);
-					}
-					setState(213);
+					setState(202);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 					while (_la==COMMA) {
 						{
 						{
-						setState(203);
+						setState(197);
 						match(COMMA);
-						setState(207);
-						_errHandler.sync(this);
-						_la = _input.LA(1);
-						while (_la==WS) {
-							{
-							{
-							setState(204);
-							match(WS);
-							}
-							}
-							setState(209);
-							_errHandler.sync(this);
-							_la = _input.LA(1);
+						{
+						setState(198);
+						match(WS);
 						}
-						setState(210);
+						setState(199);
 						constant();
 						}
 						}
-						setState(215);
+						setState(204);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
 					}
 					}
 					}
-					setState(220);
+					setState(209);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
@@ -1084,67 +1060,67 @@ public class CoDalogParser extends Parser {
 		enterRule(_localctx, 22, RULE_variableList);
 		int _la;
 		try {
-			setState(249);
+			setState(238);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,32,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,30,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(245);
+				setState(234);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==UW) {
 					{
 					{
-					setState(223);
+					setState(212);
 					variable();
-					setState(227);
+					setState(216);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 					while (_la==WS) {
 						{
 						{
-						setState(224);
+						setState(213);
 						match(WS);
 						}
 						}
-						setState(229);
+						setState(218);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
 					}
-					setState(240);
+					setState(229);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 					while (_la==COMMA) {
 						{
 						{
-						setState(230);
+						setState(219);
 						match(COMMA);
-						setState(234);
+						setState(223);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
 						while (_la==WS) {
 							{
 							{
-							setState(231);
+							setState(220);
 							match(WS);
 							}
 							}
-							setState(236);
+							setState(225);
 							_errHandler.sync(this);
 							_la = _input.LA(1);
 						}
-						setState(237);
+						setState(226);
 						variable();
 						}
 						}
-						setState(242);
+						setState(231);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
 					}
 					}
 					}
-					setState(247);
+					setState(236);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
@@ -1153,7 +1129,7 @@ public class CoDalogParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(248);
+				setState(237);
 				variable();
 				}
 				break;
@@ -1195,13 +1171,13 @@ public class CoDalogParser extends Parser {
 		TermContext _localctx = new TermContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_term);
 		try {
-			setState(253);
+			setState(242);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case UW:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(251);
+				setState(240);
 				variable();
 				}
 				break;
@@ -1209,7 +1185,7 @@ public class CoDalogParser extends Parser {
 			case DIGIT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(252);
+				setState(241);
 				constant();
 				}
 				break;
@@ -1250,7 +1226,7 @@ public class CoDalogParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(255);
+			setState(244);
 			match(UW);
 			}
 		}
@@ -1289,7 +1265,7 @@ public class CoDalogParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(257);
+			setState(246);
 			_la = _input.LA(1);
 			if ( !(_la==LW || _la==DIGIT) ) {
 			_errHandler.recoverInline(this);
@@ -1334,7 +1310,7 @@ public class CoDalogParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(259);
+			setState(248);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1358,7 +1334,7 @@ public class CoDalogParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\25\u0108\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\25\u00fd\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2"+
 		"\7\2%\n\2\f\2\16\2(\13\2\6\2*\n\2\r\2\16\2+\3\3\3\3\3\3\5\3\61\n\3\3\4"+
@@ -1373,17 +1349,16 @@ public class CoDalogParser extends Parser {
 		"\u00a6\13\n\3\n\3\n\3\13\3\13\3\13\7\13\u00ad\n\13\f\13\16\13\u00b0\13"+
 		"\13\3\13\3\13\7\13\u00b4\n\13\f\13\16\13\u00b7\13\13\3\13\7\13\u00ba\n"+
 		"\13\f\13\16\13\u00bd\13\13\7\13\u00bf\n\13\f\13\16\13\u00c2\13\13\5\13"+
-		"\u00c4\n\13\3\f\3\f\3\f\7\f\u00c9\n\f\f\f\16\f\u00cc\13\f\3\f\3\f\7\f"+
-		"\u00d0\n\f\f\f\16\f\u00d3\13\f\3\f\7\f\u00d6\n\f\f\f\16\f\u00d9\13\f\7"+
-		"\f\u00db\n\f\f\f\16\f\u00de\13\f\5\f\u00e0\n\f\3\r\3\r\7\r\u00e4\n\r\f"+
-		"\r\16\r\u00e7\13\r\3\r\3\r\7\r\u00eb\n\r\f\r\16\r\u00ee\13\r\3\r\7\r\u00f1"+
-		"\n\r\f\r\16\r\u00f4\13\r\7\r\u00f6\n\r\f\r\16\r\u00f9\13\r\3\r\5\r\u00fc"+
-		"\n\r\3\16\3\16\5\16\u0100\n\16\3\17\3\17\3\20\3\20\3\21\3\21\3\21\2\2"+
+		"\u00c4\n\13\3\f\3\f\3\f\3\f\3\f\7\f\u00cb\n\f\f\f\16\f\u00ce\13\f\7\f"+
+		"\u00d0\n\f\f\f\16\f\u00d3\13\f\5\f\u00d5\n\f\3\r\3\r\7\r\u00d9\n\r\f\r"+
+		"\16\r\u00dc\13\r\3\r\3\r\7\r\u00e0\n\r\f\r\16\r\u00e3\13\r\3\r\7\r\u00e6"+
+		"\n\r\f\r\16\r\u00e9\13\r\7\r\u00eb\n\r\f\r\16\r\u00ee\13\r\3\r\5\r\u00f1"+
+		"\n\r\3\16\3\16\5\16\u00f5\n\16\3\17\3\17\3\20\3\20\3\21\3\21\3\21\2\2"+
 		"\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\4\4\2\n\n\23\23\3\2\3\b"+
-		"\2\u011a\2)\3\2\2\2\4\60\3\2\2\2\6\62\3\2\2\2\bo\3\2\2\2\nt\3\2\2\2\f"+
+		"\2\u010d\2)\3\2\2\2\4\60\3\2\2\2\6\62\3\2\2\2\bo\3\2\2\2\nt\3\2\2\2\f"+
 		"\u0090\3\2\2\2\16\u0092\3\2\2\2\20\u0096\3\2\2\2\22\u0099\3\2\2\2\24\u00c3"+
-		"\3\2\2\2\26\u00df\3\2\2\2\30\u00fb\3\2\2\2\32\u00ff\3\2\2\2\34\u0101\3"+
-		"\2\2\2\36\u0103\3\2\2\2 \u0105\3\2\2\2\"&\5\4\3\2#%\7\24\2\2$#\3\2\2\2"+
+		"\3\2\2\2\26\u00d4\3\2\2\2\30\u00f0\3\2\2\2\32\u00f4\3\2\2\2\34\u00f6\3"+
+		"\2\2\2\36\u00f8\3\2\2\2 \u00fa\3\2\2\2\"&\5\4\3\2#%\7\24\2\2$#\3\2\2\2"+
 		"%(\3\2\2\2&$\3\2\2\2&\'\3\2\2\2\'*\3\2\2\2(&\3\2\2\2)\"\3\2\2\2*+\3\2"+
 		"\2\2+)\3\2\2\2+,\3\2\2\2,\3\3\2\2\2-\61\5\n\6\2.\61\5\b\5\2/\61\5\6\4"+
 		"\2\60-\3\2\2\2\60.\3\2\2\2\60/\3\2\2\2\61\5\3\2\2\2\62\66\5\16\b\2\63"+
@@ -1422,31 +1397,27 @@ public class CoDalogParser extends Parser {
 		"\2\2\2\u00bb\u00b9\3\2\2\2\u00bb\u00bc\3\2\2\2\u00bc\u00bf\3\2\2\2\u00bd"+
 		"\u00bb\3\2\2\2\u00be\u00aa\3\2\2\2\u00bf\u00c2\3\2\2\2\u00c0\u00be\3\2"+
 		"\2\2\u00c0\u00c1\3\2\2\2\u00c1\u00c4\3\2\2\2\u00c2\u00c0\3\2\2\2\u00c3"+
-		"\u00a9\3\2\2\2\u00c3\u00c0\3\2\2\2\u00c4\25\3\2\2\2\u00c5\u00e0\5\36\20"+
-		"\2\u00c6\u00ca\5\36\20\2\u00c7\u00c9\7\25\2\2\u00c8\u00c7\3\2\2\2\u00c9"+
-		"\u00cc\3\2\2\2\u00ca\u00c8\3\2\2\2\u00ca\u00cb\3\2\2\2\u00cb\u00d7\3\2"+
-		"\2\2\u00cc\u00ca\3\2\2\2\u00cd\u00d1\7\17\2\2\u00ce\u00d0\7\25\2\2\u00cf"+
-		"\u00ce\3\2\2\2\u00d0\u00d3\3\2\2\2\u00d1\u00cf\3\2\2\2\u00d1\u00d2\3\2"+
-		"\2\2\u00d2\u00d4\3\2\2\2\u00d3\u00d1\3\2\2\2\u00d4\u00d6\5\36\20\2\u00d5"+
-		"\u00cd\3\2\2\2\u00d6\u00d9\3\2\2\2\u00d7\u00d5\3\2\2\2\u00d7\u00d8\3\2"+
-		"\2\2\u00d8\u00db\3\2\2\2\u00d9\u00d7\3\2\2\2\u00da\u00c6\3\2\2\2\u00db"+
-		"\u00de\3\2\2\2\u00dc\u00da\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd\u00e0\3\2"+
-		"\2\2\u00de\u00dc\3\2\2\2\u00df\u00c5\3\2\2\2\u00df\u00dc\3\2\2\2\u00e0"+
-		"\27\3\2\2\2\u00e1\u00e5\5\34\17\2\u00e2\u00e4\7\25\2\2\u00e3\u00e2\3\2"+
-		"\2\2\u00e4\u00e7\3\2\2\2\u00e5\u00e3\3\2\2\2\u00e5\u00e6\3\2\2\2\u00e6"+
-		"\u00f2\3\2\2\2\u00e7\u00e5\3\2\2\2\u00e8\u00ec\7\17\2\2\u00e9\u00eb\7"+
-		"\25\2\2\u00ea\u00e9\3\2\2\2\u00eb\u00ee\3\2\2\2\u00ec\u00ea\3\2\2\2\u00ec"+
-		"\u00ed\3\2\2\2\u00ed\u00ef\3\2\2\2\u00ee\u00ec\3\2\2\2\u00ef\u00f1\5\34"+
-		"\17\2\u00f0\u00e8\3\2\2\2\u00f1\u00f4\3\2\2\2\u00f2\u00f0\3\2\2\2\u00f2"+
-		"\u00f3\3\2\2\2\u00f3\u00f6\3\2\2\2\u00f4\u00f2\3\2\2\2\u00f5\u00e1\3\2"+
-		"\2\2\u00f6\u00f9\3\2\2\2\u00f7\u00f5\3\2\2\2\u00f7\u00f8\3\2\2\2\u00f8"+
-		"\u00fc\3\2\2\2\u00f9\u00f7\3\2\2\2\u00fa\u00fc\5\34\17\2\u00fb\u00f7\3"+
-		"\2\2\2\u00fb\u00fa\3\2\2\2\u00fc\31\3\2\2\2\u00fd\u0100\5\34\17\2\u00fe"+
-		"\u0100\5\36\20\2\u00ff\u00fd\3\2\2\2\u00ff\u00fe\3\2\2\2\u0100\33\3\2"+
-		"\2\2\u0101\u0102\7\t\2\2\u0102\35\3\2\2\2\u0103\u0104\t\2\2\2\u0104\37"+
-		"\3\2\2\2\u0105\u0106\t\3\2\2\u0106!\3\2\2\2$&+\60\66=DKRY_dj\177\u0086"+
-		"\u008d\u0090\u009d\u00a4\u00ae\u00b5\u00bb\u00c0\u00c3\u00ca\u00d1\u00d7"+
-		"\u00dc\u00df\u00e5\u00ec\u00f2\u00f7\u00fb\u00ff";
+		"\u00a9\3\2\2\2\u00c3\u00c0\3\2\2\2\u00c4\25\3\2\2\2\u00c5\u00d5\5\36\20"+
+		"\2\u00c6\u00cc\5\36\20\2\u00c7\u00c8\7\17\2\2\u00c8\u00c9\7\25\2\2\u00c9"+
+		"\u00cb\5\36\20\2\u00ca\u00c7\3\2\2\2\u00cb\u00ce\3\2\2\2\u00cc\u00ca\3"+
+		"\2\2\2\u00cc\u00cd\3\2\2\2\u00cd\u00d0\3\2\2\2\u00ce\u00cc\3\2\2\2\u00cf"+
+		"\u00c6\3\2\2\2\u00d0\u00d3\3\2\2\2\u00d1\u00cf\3\2\2\2\u00d1\u00d2\3\2"+
+		"\2\2\u00d2\u00d5\3\2\2\2\u00d3\u00d1\3\2\2\2\u00d4\u00c5\3\2\2\2\u00d4"+
+		"\u00d1\3\2\2\2\u00d5\27\3\2\2\2\u00d6\u00da\5\34\17\2\u00d7\u00d9\7\25"+
+		"\2\2\u00d8\u00d7\3\2\2\2\u00d9\u00dc\3\2\2\2\u00da\u00d8\3\2\2\2\u00da"+
+		"\u00db\3\2\2\2\u00db\u00e7\3\2\2\2\u00dc\u00da\3\2\2\2\u00dd\u00e1\7\17"+
+		"\2\2\u00de\u00e0\7\25\2\2\u00df\u00de\3\2\2\2\u00e0\u00e3\3\2\2\2\u00e1"+
+		"\u00df\3\2\2\2\u00e1\u00e2\3\2\2\2\u00e2\u00e4\3\2\2\2\u00e3\u00e1\3\2"+
+		"\2\2\u00e4\u00e6\5\34\17\2\u00e5\u00dd\3\2\2\2\u00e6\u00e9\3\2\2\2\u00e7"+
+		"\u00e5\3\2\2\2\u00e7\u00e8\3\2\2\2\u00e8\u00eb\3\2\2\2\u00e9\u00e7\3\2"+
+		"\2\2\u00ea\u00d6\3\2\2\2\u00eb\u00ee\3\2\2\2\u00ec\u00ea\3\2\2\2\u00ec"+
+		"\u00ed\3\2\2\2\u00ed\u00f1\3\2\2\2\u00ee\u00ec\3\2\2\2\u00ef\u00f1\5\34"+
+		"\17\2\u00f0\u00ec\3\2\2\2\u00f0\u00ef\3\2\2\2\u00f1\31\3\2\2\2\u00f2\u00f5"+
+		"\5\34\17\2\u00f3\u00f5\5\36\20\2\u00f4\u00f2\3\2\2\2\u00f4\u00f3\3\2\2"+
+		"\2\u00f5\33\3\2\2\2\u00f6\u00f7\7\t\2\2\u00f7\35\3\2\2\2\u00f8\u00f9\t"+
+		"\2\2\2\u00f9\37\3\2\2\2\u00fa\u00fb\t\3\2\2\u00fb!\3\2\2\2\"&+\60\66="+
+		"DKRY_dj\177\u0086\u008d\u0090\u009d\u00a4\u00ae\u00b5\u00bb\u00c0\u00c3"+
+		"\u00cc\u00d1\u00d4\u00da\u00e1\u00e7\u00ec\u00f0\u00f4";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
