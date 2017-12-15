@@ -1,12 +1,6 @@
 
 -----SYNTAX ERRORS-----
 
-Line 4:12 missing '.' at '\r\n'
-Line 5:4 missing WS at 'rock'
-Line 7:7 missing ')' at '.'
 
 
 -----SEMANTIC ERRORS-----
-0: The rule a(X,Z) :- b(X,Y). is not safe
-1: The Built-in Predicate X>Y is not safe because the said operation cannot be applied on strings.
-2: One of the rules is not safe because the Builtin predicate is not safe

@@ -159,15 +159,15 @@ class CoDalogListenerEval(CoDalogListener) :
             self.predicate_list[self.p].append(predicateName)'''
         #If it is a Goal Predicate
         if self.Goal==True:
-            print('Goal')
+            #print('Goal')
             self.Goals[self.g].append(predicateName)
         #If it is a Fact Predicate
         if (self.Head==False and self.Body==False and self.Goal==False):
-            print('Fact')
+            #print('Fact')
             self.EDB[self.i].append(predicateName)
         #If it is a Rule Predicate
         if ((self.Head==True or self.Body==True) and self.Goal==False):
-            print('Rule')
+            #print('Rule')
             self.LOR[self.k].append([predicateName])
 
     # Exit a parse tree produced by CoDalogParser#atom.
@@ -215,7 +215,7 @@ class CoDalogListenerEval(CoDalogListener) :
             self.EDB[self.i].append(variable)
                     #------------checking whether the constant list has a string
         for variable in ctx.getText().split(', '):
-            print(variable.isdigit())
+            #print(variable.isdigit())
             if variable.isdigit()==False:
                 self.character=True
                 break
@@ -295,8 +295,7 @@ class CoDalogListenerEval(CoDalogListener) :
         charops=['==','!=']
         if ctx.getText() not in charops:
                 self.bptext=True
-        else:
-            self.BP[self.K].append(ctx.getText())
+        self.BP[self.K].append(ctx.getText())
 
     # Exit a parse tree produced by CoDalogParser#op.
     def exitOp(self, ctx:CoDalogParser.OpContext):

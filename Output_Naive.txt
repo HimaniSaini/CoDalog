@@ -1,0 +1,1258 @@
+
+a.Rules:
+[[['a', 'X', 'Y'], ['b', 'X', 'Y']], [['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]]
+
+a.Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+
+a.Goals:
+[['a', 'X', 'Y']]
+
+a.BP:
+[['X', '>', 'Y']]
+Naive Evaluation:
+
+
+
+---------Facts before an iteration--------
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '1', '2']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '2', '0']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '0']
+The Rule after substitution: [['a', 2, 0], ['b', 2, 0]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '2', '3']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '0', '1']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+Output of produce algotithm: [['a', 2, 0]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '1', '2']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '2', '0']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '2', '3']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1']]
+For fact['b', '0', '1']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: []
+Output of produce algotithm: []
+Result produced after evaluation: []
+
+---------Facts before an iteration--------
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '1', '2']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '2', '0']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '0']
+The Rule after substitution: [['a', 2, 0], ['b', 2, 0]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '2', '3']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '0', '1']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['a', 2, 0]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+Output of produce algotithm: [['a', 2, 0]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '1', '2']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '2', '0']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '2', '3']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['b', '0', '1']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+For fact['a', 2, 0]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 0]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '0', '1']
+The Rule after substitution: [['a', 2, 1], ['a', 2, 0], ['b', 0, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+Output of produce algotithm: [['a', 2, 1]]
+Result produced after evaluation: [['a', 2, 1]]
+
+---------Facts before an iteration--------
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '1', '2']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '2', '0']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '0']
+The Rule after substitution: [['a', 2, 0], ['b', 2, 0]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '2', '3']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '0', '1']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['a', 2, 0]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['a', 2, 1]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+Output of produce algotithm: [['a', 2, 0]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '1', '2']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '2', '0']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '2', '3']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['b', '0', '1']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['a', 2, 0]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 0]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '0', '1']
+The Rule after substitution: [['a', 2, 1], ['a', 2, 0], ['b', 0, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+For fact['a', 2, 1]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 1]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '1', '2']
+The Rule after substitution: [['a', 2, 2], ['a', 2, 1], ['b', 1, 2]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+Output of produce algotithm: [['a', 2, 1], ['a', 2, 2]]
+Result produced after evaluation: [['a', 2, 1], ['a', 2, 2]]
+
+---------Facts before an iteration--------
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '1', '2']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '2', '0']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '0']
+The Rule after substitution: [['a', 2, 0], ['b', 2, 0]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '2', '3']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '0', '1']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['a', 2, 0]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['a', 2, 1]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['a', 2, 2]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+Output of produce algotithm: [['a', 2, 0]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '1', '2']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '2', '0']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '2', '3']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['b', '0', '1']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['a', 2, 0]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 0]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '0', '1']
+The Rule after substitution: [['a', 2, 1], ['a', 2, 0], ['b', 0, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 2]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 2]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['a', 2, 1]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 1]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '1', '2']
+The Rule after substitution: [['a', 2, 2], ['a', 2, 1], ['b', 1, 2]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 2]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 2]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+For fact['a', 2, 2]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 2]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '2', '0']
+The Rule after substitution: [['a', 2, 0], ['a', 2, 2], ['b', 2, 0]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0]]
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '2', '3']
+The Rule after substitution: [['a', 2, 3], ['a', 2, 2], ['b', 2, 3]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 2]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2]]
+Fact parameter: ['a', 2, 2]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Output of produce algotithm: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Result produced after evaluation: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+---------Facts before an iteration--------
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '1', '2']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '2', '0']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '0']
+The Rule after substitution: [['a', 2, 0], ['b', 2, 0]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '2', '3']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '0', '1']and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 0]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 1]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 2]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 3]and Literal['b', 'X', 'Y']
+Rule:[['a', 'X', 'Y'], ['b', 'X', 'Y']]
+Fact:['a', 2, 3]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 0]]
+Output of produce algotithm: [['a', 2, 0]]
+
+
+
+
+----------Evaluation of Rule----------
+[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '1', '2']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '2', '0']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '2', '3']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['b', '0', '1']and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: []
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 0]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 0]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: []
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: []
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['b', '0', '1']
+The Rule after substitution: [['a', 2, 1], ['a', 2, 0], ['b', 0, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 2]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 2]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+Fact ['a', 2, 3]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 3]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 0], ['b', 0, 'Y']]
+Fact:['a', 2, 3]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 1]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 1]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '1', '2']
+The Rule after substitution: [['a', 2, 2], ['a', 2, 1], ['b', 1, 2]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 2]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 2]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['a', 2, 3]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 3]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 1], ['b', 1, 'Y']]
+Fact:['a', 2, 3]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 2]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 2]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2]]
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '2', '0']
+The Rule after substitution: [['a', 2, 0], ['a', 2, 2], ['b', 2, 0]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0]]
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '2', '3']
+The Rule after substitution: [['a', 2, 3], ['a', 2, 2], ['b', 2, 3]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 2]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 2]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 3]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 3]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 2], ['b', 2, 'Y']]
+Fact:['a', 2, 3]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+
+List Of Facts:
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+For fact['a', 2, 3]and Literal['a', 'X', 'Z']
+Rule:[['a', 'X', 'Y'], ['a', 'X', 'Z'], ['b', 'Z', 'Y']]
+Fact:['a', 2, 3]
+The Rule after substitution: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Substituing Values in the new Rule
+
+Fact ['b', '1', '2']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '1', '2']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['b', '1', '2']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['b', '2', '0']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '0']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['b', '2', '0']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['b', '2', '3']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '2', '3']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['b', '2', '3']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['b', '0', '1']
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['b', '0', '1']
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['b', '0', '1']
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 0]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 0]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['a', 2, 0]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 1]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 1]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['a', 2, 1]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 2]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 2]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['a', 2, 2]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+Fact ['a', 2, 3]
+EDB: [['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+Fact parameter: ['a', 2, 3]
+Rule parameter: [['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+IDB list parameter: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Rule:[['a', 2, 'Y'], ['a', 2, 3], ['b', 3, 'Y']]
+Fact:['a', 2, 3]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Outuput of produce_facts algotithm IDB_List: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Output of produce algotithm: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+Result produced after evaluation: [['a', 2, 1], ['a', 2, 2], ['a', 2, 0], ['a', 2, 3]]
+
+The result of Naive Evaluation: 
+[['b', '1', '2'], ['b', '2', '0'], ['b', '2', '3'], ['b', '0', '1'], ['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]
+The time taken for Naive Evaluation: 0.04405617713928223
+
+For Goal:['a', 'X', 'Y']Result is: 
+[['a', 2, 0], ['a', 2, 1], ['a', 2, 2], ['a', 2, 3]]Do you wish to query any other Goal ?
